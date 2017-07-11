@@ -1,0 +1,36 @@
+<form class="form-horizontal" name="emplForm" novalidate>
+    <legend>
+        Employee Salary Details
+    </legend>
+
+    <div class="form-group"
+         ng-class="{'has-error':emplForm.inputHRA.$invalid &&
+                                    emplForm.inputHRA.$dirty}"   >
+        <label for="inputHRA" class="col-md-2 control-label">HRA %</label>
+        <div class="col-md-2">
+            <input id="inputHRA" name="inputHRA"
+                   type="text"
+                   ng-model="vm.employee.houseAllowance" class="form-control"
+                   ui-mask="99999.99 (required)" required/>
+        </div>
+            <span class="help-block has-error"
+                  ng-show="emplForm.inputHRA.$invalid">
+                  House Rent Allowance required
+            </span>
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error':emplForm.inputOTHA.$invalid &&
+                                    emplForm.inputOTHA.$dirty}"   >
+        <label for="inputOTHA" class="col-md-2 control-label">Other Allowances %</label>
+        <div class="col-md-2">
+            <input id="inputOTHA" name="inputOTHA"
+                   type="text"
+                   ng-model="vm.employee.otherAllowance" class="form-control"
+                   ui-mask="99999.99 (required)" required/>
+        </div>
+            <span class="help-block has-error"
+                  ng-show="emplForm.inputOTHA.$invalid">
+                  Other Allowances required
+            </span>
+    </div>
+</form>
